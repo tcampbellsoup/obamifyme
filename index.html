@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Obamify Your Mood</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="shortcut icon" href="/obamafavicon.png" />
+    <style>
+    body {
+      font-family: 'Indie Flower';
+      background: #eeeeee;
+    }
+    h1 {
+      font-size: 40px;
+    }
+    </style>
+  </head>
+  <body>
+  	<center>
+  		<h1>Obamify Your Mood</h1>
+      <h2>Mend/heighten your mood with gifs of the graceful President Obama.</h2>
+  		<h3>How do you feel right now?</h3>
+  		<input type="text" id="moodEater" name="moodForm">
+  		<button onclick="" type="button">obamify me</button>
+
+  		<br>
+
+  		<!-- <button onclick= "">obamify my mood pls & thnx</button> -->
+		<br>
+  		<div id="displayGif"></div>
+  		<p id="displayMood"></p>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+      <footer>by <a href = 'http://www.tanyacampbell.space'>Tanya Campbell</a></footer>
+  	</center>
+<script>
+
+var myPossibleMoods = {
+    "confident": "./gifs/obama1.gif",
+    "turnt": "./gifs/obama2.gif",
+    "depressed": "./gifs/obama3.gif",
+    "great": "./gifs/obama4.gif",
+    "graceful": "./gifs/obama5.gif",
+    "happy": "./gifs/obama6.gif",
+    "lonely": "./gifs/obama7.gif",
+    "accomplished": "./gifs/obama8.gif",
+    "loved": "./gifs/obama9.gif",
+    "upset": "./gifs/obama10.gif",
+    "mad": "./gifs/obama11.gif",
+    "helpless": "./gifs/obama12.gif",
+    "disappointed": "./gifs/obama13.gif",
+    "good": "./gifs/obama14.gif",
+    "sad": "./gifs/obama15.gif"
+};
+
+
+
+//this grabs a gif
+// console.log(myPossibleMoods.x);
+
+//this grabs the whole object
+// console.log(myPossibleMoods);
+
+
+
+// this diplays all the values of the properties in object
+// console.log(Object(myPossibleMoods));
+
+
+//go through each element of the array, if the value matches the key, then pull out the value
+  for (x in myPossibleMoods.x){
+  };
+
+$('button').on('click', function(){
+    //takes value entered in form and saves it in local storage
+    $('input[type="text"]').each(function(){    
+        var id = $(this).attr('id');
+        var value = $(this).val();
+       localStorage.setItem(id, value);
+
+       for (x in myPossibleMoods){
+        if(value == x){
+        // put code here that pulls the gif that is matched to the key that is matched
+         var gif = document.createElement('img');
+         gif.src = myPossibleMoods[x];
+         var src = document.getElementById('displayGif');
+         src.appendChild(gif);
+          document.getElementById('displayMood').innerHTML = 'Your current mood is: ' + value;   
+
+      } 
+
+      };
+
+
+    });   
+});
+</script>
+</body>
+</html>
